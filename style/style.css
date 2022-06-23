@@ -56,4 +56,19 @@ h1 {
 }
 .numbers {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.numbers button {
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #a2b5c4;
+  cursor: pointer;
+}
+.numbers button:hover {
+  background-color: #bccedb;
 }
