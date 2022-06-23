@@ -72,3 +72,19 @@ h1 {
 .numbers button:hover {
   background-color: #bccedb;
 }
+.actions {
+  display: grid;
+  gap: 5px;
+}
+.actions button {
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: #a2b5c4;
+}
+.actions button:hover {
+  background-color: #bccedb;
+}
