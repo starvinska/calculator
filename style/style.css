@@ -46,6 +46,14 @@ h1 {
   padding: 7px 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+/* Media - nadpisuje ogólne style (dot. responsywności) */
+/* @media (min-width: 800px) {
+  .container-input input[type="text"] {
+    border-color: red;
+  }
+} */
+
 .container-input input[type="text"]:disabled {
   border: 1px dotted rgba(0, 0, 0, 0.2);
   font-weight: bold;
