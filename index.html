@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="style/style.css" />
-    <script src="/scripts/app.js"></script>
   </head>
   <body>
     <div class="calculator-container">
@@ -14,33 +13,34 @@
         <h1>Calculator</h1>
       </div>
       <div class="container-input">
-        <input type="text" placeholder="first number" />
-        <span class="plus math-symbol">+</span>
-        <input type="text" placeholder="second number" />
+        <input class="first" type="text" placeholder="first number" />
+        <span class="plus math-symbol"> </span>
+        <input class="second" type="text" placeholder="second number" />
         <span class="equal math-symbol">=</span>
-        <input type="text" disabled value="10" />
+        <input class="result" type="text" disabled />
       </div>
       <div class="calculator-controls">
         <div class="numbers">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>0</button>
+          <button class="num">1</button>
+          <button class="num">2</button>
+          <button class="num">3</button>
+          <button class="num">4</button>
+          <button class="num">5</button>
+          <button class="num">6</button>
+          <button class="num">7</button>
+          <button class="num">8</button>
+          <button class="num">9</button>
+          <button class="num">0</button>
         </div>
         <div class="actions">
-          <button>+</button>
-          <button>-</button>
-          <button>:</button>
-          <button>*</button>
-          <button>=</button>
+          <button class="math">+</button>
+          <button class="math">-</button>
+          <button class="math">:</button>
+          <button class="math">*</button>
+          <button class="math math-equal">=</button>
         </div>
       </div>
     </div>
+    <script src="/scripts/calculator.js"></script>
   </body>
 </html>
