@@ -36,11 +36,19 @@ const secondInput =document.querySelector('.second')
 
 const resultInput =document.querySelector('.result')
 
-let firstInputValue 
+const numberContainer = document.querySelector('.numbers')
 
-let secondInputValue 
+const toast = document.createElement('div')
+       toast.classList.add('toast')
+       toast.innerText = 'Wyrażenie jest niepoprawne'
+
+let firstInputValue= ''
+
+let secondInputValue =''
 
 let operation = '+'
+
+let activeInput = firstInput
 
 mathSymbol.innerText = operation
 
@@ -51,21 +59,62 @@ actionsContainer.addEventListener('click', (event) => {
     } 
     else if(event.target.classList.contains('math-equal') && firstInputValue && secondInputValue ) {
         if(operation==='+') {
-            resultInput.value= firstInputValue + secondInputValue
+            resultInput.value= +firstInputValue + +secondInputValue
         } else if(operation==='-') {
-            resultInput.value= firstInputValue - secondInputValue
+            resultInput.value= +firstInputValue - +secondInputValue
         } else if(operation===':') {
-            resultInput.value= firstInputValue / secondInputValue
+            resultInput.value= +firstInputValue / +secondInputValue
         } else if(operation==='*') {
-            resultInput.value= firstInputValue * secondInputValue
+            resultInput.value= +firstInputValue * +secondInputValue
         }
+
+    } else if(event.target.classList.contains('math-equal') && (!firstInputValue || !secondInputValue)) {
+       document.body.appendChild(toast)
+
+       window.setTimeout(()=>{
+        toast.remove()
+       },
+       3000
+       )
     }
 } )
 
 firstInput.addEventListener('input', (event) => {
-    firstInputValue = +event.target.value
+    if(isNaN(Number(event.target.value))) {
+        firstInput.classList.add('error')
+    } 
+    
+    else {firstInput.classList.remove('error')
+    firstInputValue = +event.target.value}
+})
+
+firstInput.addEventListener('click', (event) => {
+    activeInput= firstInput
 })
 
 secondInput.addEventListener('input', (event) => {
-    secondInputValue = +event.target.value
+    if(isNaN(Number(event.target.value))) {
+        secondInput.classList.add('error')
+    }
+
+    else {secondInput.classList.remove('error')
+    secondInputValue = +event.target.value}
 })
+
+secondInput.addEventListener('click', (event) => {
+    activeInput = secondInput
+})
+
+
+numberContainer.addEventListener('click',(event) => {
+    if(event.target.classList.contains('num')){
+        activeInput.value += +event.target.innerText
+        if(activeInput===firstInput) {
+            firstInputValue+= event.target.innerText
+        }
+        else if(activeInput===secondInput) {
+            secondInputValue+= event.target.innerText
+        }
+    }
+
+} )

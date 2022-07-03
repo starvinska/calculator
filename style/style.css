@@ -39,6 +39,7 @@ h1 {
 }
 .container-input input[type="text"].error {
   border-color: red;
+  outline-color: red;
 }
 .container-input input[type="text"] {
   background-color: transparent;
@@ -104,4 +105,14 @@ h1 {
 }
 .actions button:hover {
   background-color: #bccedb;
+}
+
+.toast {
+  position: absolute;
+  bottom: 20px;
+  background-color: rgb(246, 221, 204);
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(148, 49, 38);
+  font-weight: bold;
 }
